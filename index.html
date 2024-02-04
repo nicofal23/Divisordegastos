@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>División de Gastos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1>División de Gastos</h1>
+
+    <div class="contenedor">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre">
+      <label for="gasto">Gasto:</label>
+      <input type="number" id="gasto">
+      <button onclick="agregarPersona()">Agregar Persona</button>
+    </div>
+
+    <ul id="listaPersonas"></ul>
+
+    <button onclick="calcularGastos()">Finalizar</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
