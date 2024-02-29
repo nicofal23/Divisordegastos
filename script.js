@@ -20,8 +20,8 @@ function actualizarListaPersonas() {
     listItem.style.color = 'white'; // Establecer el color del texto a blanco
     listItem.style.marginBottom = '15px'; // Agregar margen de 15px
     listaPersonas.appendChild(listItem);
-  }); // Faltaba esta llave de cierre
-} // Llave de cierre de la función actualizarListaPersonas
+  });
+}
 
 function calcularGastos() {
   const totalGastos = personas.reduce((total, persona) => total + persona.gasto, 0);
@@ -36,18 +36,36 @@ function calcularGastos() {
 
     if (deuda > 0) {
       deudaTexto.innerHTML = `${persona.nombre} debe pagar $${deuda.toFixed(2)}`;
-      deudaTexto.classList.add('debe-pagar'); 
-  } else if (deuda < 0) {
+      deudaTexto.classList.add('debe-pagar');
+    } else if (deuda < 0) {
       deudaTexto.innerHTML = `${persona.nombre} debe recuperar $${Math.abs(deuda).toFixed(2)}`;
-      deudaTexto.classList.add('debe-recuperar'); 
-  } else {
+      deudaTexto.classList.add('debe-recuperar');
+    } else {
       deudaTexto.innerHTML = `${persona.nombre} no debe nada`;
-      deudaTexto.classList.add('no-debe-nada'); 
-  }
+      deudaTexto.classList.add('no-debe-nada');
+    }
 
- 
     deudaTexto.style.color = 'white'; // Establecer el color del texto a blanco
     deudaTexto.style.marginBottom = '15px';
     resultado.appendChild(deudaTexto);
   });
-} // Llave de cierre de la función calcularGastos
+}
+
+// Obtener los campos de entrada
+const inputNombre = document.getElementById('nombre');
+const inputGasto = document.getElementById('gasto');
+
+// Agregar evento de escucha para la tecla Enter
+inputNombre.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+    agregarPersona(); // Llamar a la función agregarPersona() cuando se presiona Enter
+  }
+});
+
+inputGasto.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+    agregarPersona(); // Llamar a la función agregarPersona() cuando se presiona Enter
+  }
+});
