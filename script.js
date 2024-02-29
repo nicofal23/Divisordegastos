@@ -17,9 +17,11 @@ function actualizarListaPersonas() {
   personas.forEach(persona => {
     const listItem = document.createElement('li');
     listItem.textContent = `${persona.nombre}: $${persona.gasto.toFixed(2)}`;
+    listItem.style.color = 'white'; // Establecer el color del texto a blanco
+    listItem.style.marginBottom = '15px'; // Agregar margen de 15px
     listaPersonas.appendChild(listItem);
-  });
-}
+  }); // Faltaba esta llave de cierre
+} // Llave de cierre de la función actualizarListaPersonas
 
 function calcularGastos() {
   const totalGastos = personas.reduce((total, persona) => total + persona.gasto, 0);
@@ -30,16 +32,22 @@ function calcularGastos() {
 
   personas.forEach(persona => {
     const deuda = promedio - persona.gasto;
-    resultado.innerHTML += `${persona.nombre} debe `;
-    
-    if (deuda > 0) {
-      resultado.innerHTML += `pagar $${deuda.toFixed(2)}`;
-    } else if (deuda < 0) {
-      resultado.innerHTML += `recuperar $${Math.abs(deuda).toFixed(2)}`;
-    } else {
-      resultado.innerHTML += `nada`;
-    }
+    const deudaTexto = document.createElement('div');
 
-    resultado.innerHTML += `<br>`;
+    if (deuda > 0) {
+      deudaTexto.innerHTML = `${persona.nombre} debe pagar $${deuda.toFixed(2)}`;
+      deudaTexto.classList.add('debe-pagar'); 
+  } else if (deuda < 0) {
+      deudaTexto.innerHTML = `${persona.nombre} debe recuperar $${Math.abs(deuda).toFixed(2)}`;
+      deudaTexto.classList.add('debe-recuperar'); 
+  } else {
+      deudaTexto.innerHTML = `${persona.nombre} no debe nada`;
+      deudaTexto.classList.add('no-debe-nada'); 
+  }
+
+
+    deudaTexto.style.color = 'white'; // Establecer el color del texto a blanco
+    deudaTexto.style.marginBottom = '15px';
+    resultado.appendChild(deudaTexto);
   });
-}
+} // Llave de cierre de la función calcularGastos
