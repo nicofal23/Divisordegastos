@@ -19,13 +19,26 @@
       <input type="number" id="gasto" required="">
       <label for="gasto">Gasto:</label>
     </div>
-    <button type="button" onclick="agregarPersona()">Agregar Persona</button>
+    
   </form> 
-  <ul id="listaPersonas"></ul>
+  <div class="botones">
+    <div>
+      <button type="button" onclick="agregarPersona()">Agregar Persona</button>
+    </div>
+    <div>
+      <button type="button" onclick="calcularGastos()">Finalizar</button>
+    </div>
+  </div>
+    <div class="listabotones">
+      <h2>Lista personas:</h2>
+      <ul id="listaPersonas"></ul>
+    </div>
+    <div class="listabotones">
+      <h2>Cuenta a pagar:</h2>
+      <div id="resultado"></div>
+    </div>
+  
 
-  <button type="button" onclick="calcularGastos()">Finalizar</button>
-
-  <div id="resultado"></div>
 </div>
 
 <script src="script.js"></script>

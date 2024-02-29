@@ -232,13 +232,34 @@
   }
   
   .debe-pagar {
+    border: 1px solid red;
+    padding: 10px;
     color: red !important; /* Por ejemplo, color rojo para debe pagar */
 }
 
 .debe-recuperar {
+  border: 1px solid green;
+    padding: 10px;
     color: green !important; /* Por ejemplo, color verde para debe recuperar */
 }
 
 .no-debe-nada {
+    border: 1px solid white;
+    padding: 10px;
     color: rgb(248, 248, 255) !important; /* Por ejemplo, color azul para no debe nada */
+}
+.botones {
+  display: flex;
+  justify-content: center;
+}
+
+.listabotones {
+  border: 1px solid #03e9f4;
+  padding: 10px;
+  margin: 5px;
+}
+
+
+#listaPersonas {
+  padding-left: 10px !important;
 }

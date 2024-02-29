@@ -18,7 +18,7 @@ function actualizarListaPersonas() {
     const listItem = document.createElement('li');
     listItem.textContent = `${persona.nombre}: $${persona.gasto.toFixed(2)}`;
     listItem.style.color = 'white'; // Establecer el color del texto a blanco
-    listItem.style.marginBottom = '15px'; // Agregar margen de 15px
+    listItem.style.marginBottom = '10px'; // Agregar margen de 15px
     listaPersonas.appendChild(listItem);
   });
 }
@@ -46,7 +46,7 @@ function calcularGastos() {
     }
 
     deudaTexto.style.color = 'white'; // Establecer el color del texto a blanco
-    deudaTexto.style.marginBottom = '15px';
+    deudaTexto.style.marginBottom = '10px';
     resultado.appendChild(deudaTexto);
   });
 }
