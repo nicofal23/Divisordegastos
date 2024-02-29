@@ -45,7 +45,7 @@ function calcularGastos() {
       deudaTexto.classList.add('no-debe-nada'); 
   }
 
-
+ 
     deudaTexto.style.color = 'white'; // Establecer el color del texto a blanco
     deudaTexto.style.marginBottom = '15px';
     resultado.appendChild(deudaTexto);
